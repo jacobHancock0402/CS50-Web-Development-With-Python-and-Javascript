@@ -1,0 +1,23 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <div>
+        <h1>{{user.username}}</h1>
+        <h3>{{followers}} Followers</h3>
+        <h3>Following {{following}}</h3>
+        <form>
+            <button type="submit" name="follow">{{follow}}</button>
+        </form
+    </div>
+    <div style="border:solid">
+        {% for x in posts %}
+        <div style="border:solid">
+            <h3>{{x.title}}</h3>
+            <h5>{{x.content}}</h5>
+            <p>Posted on {{x.time}} by
+                <a href="http://127.0.0.1:8000/{{x.user}}">{{x.user}}</a>
+            <p>{{x.likes}} Likes</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

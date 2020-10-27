@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {% for x in entries %}
+    {{x}}
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
+
+<p>
+    {% for x in entries %}
+    {{x}}
+    {% endfor %}
+</p>
+
+{% endblock %}

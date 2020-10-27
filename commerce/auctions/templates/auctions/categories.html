@@ -1,0 +1,19 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>All Categories</h2>
+    <ul>
+          {% for key, values in Categories.items %}
+        <li>
+            <h2>{{key}}</h2>
+            <ul>
+                {% for value in values %}
+                <li>
+                    <a href="http://127.0.0.1:8000/{{value.Title}}">{{value.Title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
