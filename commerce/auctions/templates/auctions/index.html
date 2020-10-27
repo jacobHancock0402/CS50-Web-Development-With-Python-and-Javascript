@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    <ol>
+        {% for auction in auctions %}
+        {% if auction.Closed != "True" %}
+        <li>
+            <a href="http://127.0.0.1:8000/{{auction.Title}}">Title: {{auction.Title}} Description: {{auction.Description}} Image:{{auction.Image}}</>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h1>{{title}}<h1>
+        <h2>{{H_Bid}}<h2>
+        {% if type %}
+            <h3>{{type}}<h3>
+
+
+         {%endif%}
+                {% if error %}
+                <h1>{{error}}</h1>
+                {%endif%}
+                {% if win %}
+                <h1>{{win}}</h1>
+                {%endif%}
+                {% if closed %}
+                <h1>{{closed}}</h1>
+                {%endif%}
+     {% if image %}
+     <img src="{{image}}">
+     {%endif%}
+
+    <p>{{desc}}</p>
+    {% if logged %}
+       <form>
+           {% if not check %}
+           <button type="submit" name="lol">Add To Wishlist!</button>
+           {% endif %}
+           {% if check %}
+           <button type="submit" name="rem">Remove From Wishlist!</button>
+           {% endif %}
+
+           <input type="number" name="bid" placeholder="Bid Now!">
+           {% if vendor %}
+           <input type="submit" name="close" value="Close My Auction">
+           {%endif%}
+       </form>
+    <ul>
+        {% for comment in comments %}
+        <li>{{comment.content}}</li>
+        {%endfor%}
+    </ul>
+                <form>
+                    <textarea rows="4" cols ="62" name="comment" placeholder="Add A Comment!"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+
+     {%endif%}
+
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Your Watchlist</h2>
+    <ol>
+        {% for page in pages %}
+        {% if auction.Closed != "True" %}
+        <li>
+            <a href="http://127.0.0.1:8000/{{page.auction}}">{{page.auction}}</>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+{% endblock %}
